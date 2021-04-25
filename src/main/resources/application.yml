@@ -1,0 +1,30 @@
+spring:
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop #시작될때 생성
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    com.jin: DEBUG
+
+# JWT #base64 encoding key
+jwt:
+  header: Authorization
+  secret: aGlteW5hbWVpc2RldmppbnN0dWR5aW5nLWhpbXluYW1laXNkZXZqaW5zdHVkeWluZy1oaW15bmFtZWlzZGV2amluc3R1ZHlpbmctaGlteW5hbWVpc2RldmppbnN0dWR5aW5nLWhpbXluYW1laXNkZXZqaW5zdHVkeWluZw==
+  token-validity-in-seconds: 86400
